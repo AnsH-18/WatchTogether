@@ -14,9 +14,12 @@ function MessageBox(props:any) {
     const [messages, setMessages] = useState<message[]>([])
     const [message, setMessage] = useState("")
 
-    console.log(messages)
+    console.log(message)
+    socket && console.log("active")
     useEffect(() => {
+        console.log("123")
         socket?.on("receive_message", (data:message) => {
+            console.log("reached")
             console.log(data)
             setMessages(prev => [...prev, data])
         })
@@ -31,10 +34,12 @@ function MessageBox(props:any) {
             socket?.off("receive_message")
             socket?.off("error")
         }
-    }, [])
+    }, [socket])
 
 
     const sendMessage = () => {
+        // console.log("click");
+        
         socket?.emit("send_message", {content: message, roomId: props.room})
     }
 

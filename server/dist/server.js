@@ -141,7 +141,7 @@ io.on("connection", (socket) => {
         }
         // socket.to().emit("receive_message","message")
         console.log(room.code.toString());
-        io.to(room.code).emit("receive_message", {
+        io.to(`${room.code}`).emit("receive_message", {
             userName: user === null || user === void 0 ? void 0 : user.name,
             content: message.content,
             time: Date.now()
@@ -171,6 +171,7 @@ app.post("/upload-video", upload.single("videofile"), (req, res) => __awaiter(vo
         success: true
     });
 }));
+console.log("server");
 server.listen(8000, () => {
     console.log("Server is running on port", 8000);
 });

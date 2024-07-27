@@ -41,6 +41,9 @@ function Room() {
       socket?.off("error")
      }
   }, [socket])
+
+  console.log(params);
+  
   return (
     <div className='p-5 flex flex-col gap-10 min-h-screen min-w-[390px] bg-black'>
       <div><p>Room</p></div>
