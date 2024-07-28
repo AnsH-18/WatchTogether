@@ -21,7 +21,7 @@ const server = http.createServer(app);
 const prisma = new PrismaClient();
 const io = new Server(server, {
     cors: {
-        origin: 'https://watch-together-65jrdqc93-ansh-19s-projects.vercel.app',
+        origin: 'https://watch-together-elyzvkjga-ansh-19s-projects.vercel.app',
         methods: ['GET', 'POST'],
     },
 });
