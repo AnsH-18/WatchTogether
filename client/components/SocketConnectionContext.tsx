@@ -16,7 +16,7 @@ export const SocketProvider = ({ children } :Readonly<{
   const [socket, setSocket] = useState<mysocket | null>(null) 
 
   useEffect(() => {
-    const newSocket = io("https://watch-together-emer.vercel.app:8000"); // Replace with your server URL
+    const newSocket = io("https://watch-together-emer.vercel.app"); // Replace with your server URL
     setSocket(newSocket);
 
     return () => {newSocket.close();}

@@ -53,7 +53,7 @@ export function TabsDemo() {
     //emit create_room with the file mp4 url
 
    try {
-     const baseurl = "https://watch-together-emer.vercel.app:8000/upload-video"
+     const baseurl = "https://watch-together-emer.vercel.app/upload-video"
      const formData = new FormData()
      formData.append("videofile", videoFilePath) 
      const response = await fetch(baseurl, {
